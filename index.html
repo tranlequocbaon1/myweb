@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Danh sách nhóm</title>
+    <title>Team Members</title>
     <style>
       body {
         margin: 0;
@@ -11,45 +11,98 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background-color: #f0f2f5;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        text-align: center;
+        background-color: #f8f9fb; /* Màu nền xám nhạt */
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       }
 
-      .container {
-        padding: 20px;
+      /* Khung chính trắng bên ngoài */
+      .card-container {
+        background-color: #ffffff;
+        width: 90%;
+        max-width: 500px;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       }
 
-      .big-text {
-        font-size: 3rem;
-        font-weight: bold;
-        line-height: 1.6;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      /* Tiêu đề Team Members */
+      .header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
       }
 
-      .color-1 {
-        color: #e74c3c;
-      } /* Màu Đỏ */
-      .color-2 {
-        color: #2ecc71;
-      } /* Màu Xanh lá */
-      .color-3 {
-        color: #9b59b6;
-      } /* Màu Tím */
+      .header-line {
+        width: 4px;
+        height: 24px;
+        background-color: #0046af; /* Màu xanh đậm của vạch đứng */
+        margin-right: 12px;
+        border-radius: 2px;
+      }
 
-      @media (max-width: 600px) {
-        .big-text {
-          font-size: 1.5rem;
-        }
+      .header-title {
+        font-size: 35px;
+        font-weight: 700;
+        color: #1a1a1b;
+      }
+
+      /* Từng mục Student */
+      .member-item {
+        background-color: #f9f8fa; /* Màu nền nhẹ cho từng item */
+        border: 1px solid #edf0f2;
+        border-radius: 30px;
+        padding: 15px 20px;
+        margin-bottom: 12px;
+        transition: transform 0.2s;
+      }
+
+      .member-item:hover {
+        border-color: #d1d9e0;
+      }
+
+      .student-label {
+        font-weight: 700;
+        color: #1a1b1a;
+        margin-right: 5px;
+      }
+
+      .student-name {
+        font-weight: 400;
+        color: #555555;
+      }
+
+      .mssv {
+        display: block;
+        font-size: 14px;
+        color: #7c7c7c;
+        margin-top: 4px;
+        letter-spacing: 0.5px;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="big-text">
-        <span class="color-1">24120254 - Nguyễn Ngọc Bảo An</span> <br />
-        <span class="color-2">24120268 - Trần Lê Quốc Bảo</span> <br />
-        <span class="color-3">24120286 - Lê Huy Diễn</span>
+    <div class="card-container">
+      <div class="header">
+        <div class="header-line"></div>
+        <div class="header-title">Team Members</div>
+      </div>
+
+      <div class="member-item">
+        <span class="student-label">Student 1:</span>
+        <span class="student-name">Nguyễn Ngọc Bảo An</span>
+        <span class="mssv">MSSV: 24120254</span>
+      </div>
+
+      <div class="member-item">
+        <span class="student-label">Student 2:</span>
+        <span class="student-name">Trần Lê Quốc Bảo</span>
+        <span class="mssv">MSSV: 24120268</span>
+      </div>
+
+      <div class="member-item">
+        <span class="student-label">Student 3:</span>
+        <span class="student-name">Lê Huy Diễn</span>
+        <span class="mssv">MSSV: 24120286</span>
       </div>
     </div>
   </body>
