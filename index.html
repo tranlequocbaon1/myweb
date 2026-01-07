@@ -3,80 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team Members</title>
+    <title>Team Members - Ultra Premium</title>
     <style>
+      :root {
+        --primary-blue: #00d2ff;
+        --secondary-blue: #3a7bd5;
+        --gold: #fbc02d;
+        --soft-yellow: #fffde7;
+      }
+
       body {
         margin: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background-color: #f8f9fb; /* Màu nền xám nhạt */
-        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: radial-gradient(circle at center, #243b55 0%, #141e30 100%);
+        font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, sans-serif;
+        overflow: hidden;
       }
 
-      /* Khung chính trắng bên ngoài */
       .card-container {
-        background-color: #ffffff;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
         width: 90%;
-        max-width: 500px;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        max-width: 450px;
+        padding: 40px;
+        border-radius: 30px;
+        border: 2px solid var(--secondary-blue);
+        box-shadow: 0 0 20px rgba(58, 123, 213, 0.4),
+          inset 0 0 15px rgba(255, 255, 255, 0.05);
+        animation: fadeInScale 0.8s ease-out;
       }
 
-      /* Tiêu đề Team Members */
       .header {
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 35px;
       }
 
       .header-line {
-        width: 4px;
-        height: 24px;
-        background-color: #0046af; /* Màu xanh đậm của vạch đứng */
-        margin-right: 12px;
-        border-radius: 2px;
+        width: 6px;
+        height: 30px;
+        background: linear-gradient(
+          to bottom,
+          var(--primary-blue),
+          var(--secondary-blue)
+        );
+        margin-right: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px var(--primary-blue);
       }
 
       .header-title {
-        font-size: 35px;
-        font-weight: 700;
-        color: #1a1a1b;
+        font-size: 26px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
       }
 
-      /* Từng mục Student */
       .member-item {
-        background-color: #f9f8fa; /* Màu nền nhẹ cho từng item */
-        border: 1px solid #edf0f2;
-        border-radius: 30px;
-        padding: 15px 20px;
-        margin-bottom: 12px;
-        transition: transform 0.2s;
+        background: var(--soft-yellow);
+        border-left: 5px solid var(--gold);
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 0;
+        transform: translateX(-30px);
+        animation: slideIn 0.5s forwards;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .member-item:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      .member-item:nth-child(3) {
+        animation-delay: 0.5s;
+      }
+      .member-item:nth-child(4) {
+        animation-delay: 0.7s;
       }
 
       .member-item:hover {
-        border-color: #d1d9e0;
+        transform: scale(1.05) rotate(1deg);
+        box-shadow: 0 15px 30px rgba(251, 192, 45, 0.4);
+        background: #ffffff;
       }
 
       .student-label {
-        font-weight: 700;
-        color: #1a1b1a;
-        margin-right: 5px;
+        font-weight: 800;
+        font-size: 12px;
+        color: #ff6f00;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        display: block;
+        margin-bottom: 6px;
       }
 
       .student-name {
-        font-weight: 400;
-        color: #555555;
+        font-weight: 900;
+        color: #1a1a1b;
+        font-size: 1.3rem;
+        display: block;
       }
 
       .mssv {
-        display: block;
+        display: inline-block;
         font-size: 14px;
-        color: #7c7c7c;
-        margin-top: 4px;
-        letter-spacing: 0.5px;
+        font-weight: 800;
+        color: #ffffff;
+        margin-top: 10px;
+        padding: 4px 12px;
+        background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(58, 123, 213, 0.3);
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
     </style>
   </head>
@@ -84,25 +147,25 @@
     <div class="card-container">
       <div class="header">
         <div class="header-line"></div>
-        <div class="header-title">Team Members</div>
+        <div class="header-title">Elite Team</div>
       </div>
 
       <div class="member-item">
-        <span class="student-label">Student 1:</span>
-        <span class="student-name">Nguyễn Ngọc Bảo An</span>
-        <span class="mssv">MSSV: 24120254</span>
-      </div>
-
-      <div class="member-item">
-        <span class="student-label">Student 2:</span>
-        <span class="student-name">Trần Lê Quốc Bảo</span>
-        <span class="mssv">MSSV: 24120268</span>
-      </div>
-
-      <div class="member-item">
-        <span class="student-label">Student 3:</span>
+        <span class="student-label">Captain</span>
         <span class="student-name">Lê Huy Diễn</span>
-        <span class="mssv">MSSV: 24120286</span>
+        <span class="mssv">ID: 24120286</span>
+      </div>
+
+      <div class="member-item">
+        <span class="student-label">Specialist</span>
+        <span class="student-name">Trần Lê Quốc Bảo</span>
+        <span class="mssv">ID: 24120268</span>
+      </div>
+
+      <div class="member-item">
+        <span class="student-label">Strategist</span>
+        <span class="student-name">Nguyễn Ngọc Bảo An</span>
+        <span class="mssv">ID: 24120254</span>
       </div>
     </div>
   </body>
